@@ -21,7 +21,7 @@ title('v(t)');
 xlabel('Time t, s');
 ylabel('Velocity v, m/s');
 xlim([0 t_max]);
-legend('my\_ode45','ode45', 'ode23', 'Location', 'best')
+legend('my\_ode45', 'ode45', 'ode23', 'Location', 'best');
 
 figure(2);
 plot(t1, y1(:, 2), 'r.', t2, y2(:, 2), 'b-', t3, y3(:, 2), 'g--');
@@ -29,4 +29,4 @@ title('z(t)');
 xlabel('Time t, s');
 ylabel('Distance z, m');
 xlim([0 t_max]);
-legend('my\_ode45','ode45', 'ode23', 'Location', 'best')
+legend('my\_ode45', 'ode45', 'ode23', 'Location', 'best');
