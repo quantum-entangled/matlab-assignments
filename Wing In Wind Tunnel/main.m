@@ -7,7 +7,7 @@ clear;
 global alpha0 beta U_type V_type given_U a omega h t_max;
 
 [alpha0, beta, T0, V0, Z0, U_type, V_type, given_U, a, omega, ...
-    h, t_max] = set_properties('~fluctuatingU', '~fluctuatingV');
+    h, t_max] = set_properties('fluctuatingU', 'fluctuatingV');
 
 
 % Solve
