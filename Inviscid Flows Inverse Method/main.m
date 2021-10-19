@@ -26,7 +26,7 @@ streamlines = [-1, -0.5, 0, 0.5, 1];
 % Evaluate stream function
 for i = 1:m
     for j = 1:n
-        PSI(i,j) = F(X(i), Y(j));
+        PSI(i,j) = F(X(i), Y(j), 'unif+5doub');
     end
 end
 

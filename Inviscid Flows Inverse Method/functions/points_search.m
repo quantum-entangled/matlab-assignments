@@ -45,7 +45,8 @@ function [X_intersec, Y_intersec, elem_num] = points_search(X, Y, PSI, PSI_a)
             j = j + 1;
         end
     end
-
+    
+    % Number of points
     elem_num = c;
 
 end
