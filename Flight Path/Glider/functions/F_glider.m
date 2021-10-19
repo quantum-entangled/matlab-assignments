@@ -5,10 +5,8 @@ function R = F_glider(~, y)
     global A B
     
     
-    % Assign the required values
-    X = y(1);
-    U = y(2);
-    Y = y(3);
+    % Assign the required values   
+    U = y(3);
     V = y(4);
     
     
@@ -16,7 +14,6 @@ function R = F_glider(~, y)
     F1 = -A * sqrt(U^2 + V^2) * (B * U + V);
     F2 = -1 + A * sqrt(U^2 + V^2) * (U - B * V);
     
-    R = [U; F1; V; F2];
+    R = [U; V; F1; F2];
     
 end
-

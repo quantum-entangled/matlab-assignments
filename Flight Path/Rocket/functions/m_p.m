@@ -11,4 +11,3 @@ function m_p = m_p(m_p0)
     m_p = m_p0 - double(int(f, t, [0 5]));
 
 end
-

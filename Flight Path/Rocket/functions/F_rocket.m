@@ -6,7 +6,6 @@ function R = F_rocket(~, y)
     
     
     % Assign the required values
-    Z = y(1);
     V = y(2);
     
     
@@ -17,4 +16,3 @@ function R = F_rocket(~, y)
     R = [R1; R2];
     
 end
-

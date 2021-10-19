@@ -1,9 +1,10 @@
+% Clean data
 clc;
 clear;
 
 
 % Parameters
-global A B
+global A B h
 
 
 % Assign the required values
@@ -52,12 +53,12 @@ for i = 1:2
             Y2(j) = Y;
         end
 
-        [t, y] = ode45(@F_glider, [T, T+h], [X, U, Y, V]);
+        [t, y] = my_ode45_glider(@F_glider, [T, T+h], [X, Y, U, V]);
         
         T = t(end);
         X = y(end, 1);
-        U = y(end, 2);
-        Y = y(end, 3);
+        Y = y(end, 2);
+        U = y(end, 3);
         V = y(end, 4);
     end
 
@@ -81,4 +82,3 @@ end
 
 legend(['\theta_0 = ', num2str(theta0(1)*180/pi), '°'], ...
     ['\theta_0 = ', num2str(theta0(2)*180/pi), '°']);
-

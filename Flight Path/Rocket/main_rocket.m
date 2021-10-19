@@ -1,3 +1,4 @@
+% Clean data
 clc;
 clear;
 
@@ -33,7 +34,8 @@ V(1) = 250;
 
 % Main loop
 for j = 2:n
-    [t, y] = ode45(@F_rocket, [T(j-1), T(j-1)+h], [Z(j-1), V(j-1)]);
+    [t, y] = my_ode45_rocket(@F_rocket, [T(j-1), T(j-1)+h], ...
+        [Z(j-1), V(j-1)]);
 
     T(j) = t(end);
     Z(j) = y(end, 1);
