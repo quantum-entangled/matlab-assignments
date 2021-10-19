@@ -1,6 +1,6 @@
 function [C, PHI] = preceding_coefs(C, n)
 % PRECEDING_COEFS Solve the set of n linear algebraic equations 
-% simultaneously for the n unknowns f(i).
+% simultaneously for the n unknowns f_i
 
     % Eliminating process
     for i = 2:n-1
