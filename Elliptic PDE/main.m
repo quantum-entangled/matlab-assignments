@@ -69,7 +69,7 @@ for i = 1:length(streamlines)
     plot(X_intersec(1:elem_num), Y_intersec(1:elem_num), plot_markers(i));
 end
 
-plot(X0, Y0, plot_markers(i+1));
+plot(X0, Y0, plot_markers(end));
 hold off;
 title('Streamlines of a vortex bounded by a rectangular wall');
 xlabel('X');
