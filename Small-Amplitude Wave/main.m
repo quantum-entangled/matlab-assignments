@@ -35,13 +35,13 @@ for i = 1:m
 end
 
 
-% Coundary conditions at the closed left end
+% Boundary conditions
 for j = 2:j_max
     u(1,j) = 0;
 end
 
 
-% Compute the solution at j = 2
+% Starting formula
 for i = 2:m-1
     u(i,2) = (f(i-1) + f(i+1)) / 2 + tau * g(i);
 end
@@ -49,22 +49,8 @@ end
 u(m,2) = f(m-1) + tau * g(m);
 
 
-% Compute the solution at subsequent time steps
-for j = 2:j_max-1
-    for i = 2:m-1
-        u(i,j+1) = u(i-1,j) + u(i+1,j) - u(i,j-1);
-    end
-    
-    u(m,j+1) = 2 * u(m-1,j) - u(m,j-1);
-end
-
-for j = 1:j_max
-    for i = 1:m
-        if abs(u(i,j)) < 1e-10
-            u(i,j) = 0;
-        end
-    end
-end
+% Compute the solution
+u = numerical_scheme(u, m, j_max);
 
 
 % Compute grid points coordinates
@@ -78,12 +64,12 @@ end
 % Plot results
 iter = 1;
 j_ind = 1;
-count = 0;
+count = 1;
 
 while j_ind <= j_max
-    if count == 20
+    if count == 5
         iter = 1;
-        count = 0;
+        count = 1;
         figure();
     end
 
@@ -99,5 +85,5 @@ while j_ind <= j_max
 
     iter = iter + 1;
     j_ind = j_ind + 5;
-    count = count + 5;
+    count = count + 1;
 end
