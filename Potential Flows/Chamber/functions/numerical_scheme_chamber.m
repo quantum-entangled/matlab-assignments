@@ -1,5 +1,5 @@
-function [PSI_new] = numerical_scheme_chamber(PSI_guessed)
-% NUMERICAL_SCHEME Solve Poisson equation for the flow through the chamber
+function PSI_new = numerical_scheme_chamber(PSI_guessed)
+% NUMERICAL_SCHEME Solve Laplace equation for the flow through the chamber
 
     % Parameters
     global m n last_j_val;
@@ -44,7 +44,7 @@ function [PSI_new] = numerical_scheme_chamber(PSI_guessed)
     end
     
     
-    % Overrelaxation scheme
+    % Overrelaxation method
     while error > max_err
     iter = iter + 1;
     error = 0;
