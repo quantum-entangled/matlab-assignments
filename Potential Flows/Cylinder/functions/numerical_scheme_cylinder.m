@@ -1,5 +1,5 @@
-function [PSI_new] = numerical_scheme_cylinder(PSI_guessed)
-% NUMERICAL_SCHEME Solve Poisson equation for the flow around the circular 
+function PSI_new = numerical_scheme_cylinder(PSI_guessed)
+% NUMERICAL_SCHEME Solve Laplace equation for the flow around the circular 
 % cylinder
 
     % Parameters
@@ -86,7 +86,7 @@ function [PSI_new] = numerical_scheme_cylinder(PSI_guessed)
     end
     
     
-    % Iteration process
+    % Liebmann's method
     while error > max_err
         iter = iter + 1;
         error = 0;
